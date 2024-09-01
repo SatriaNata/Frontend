@@ -9,4 +9,15 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  routeRules: {
+      '/api1/**': {
+          proxy: { to: "https://www.mmobomb.com/api1/**", },
+      },
+      '/': { prerender: true },
+      '/*': { cors: true } 
+    },
+  // routes: { 
+  //   '/': { prerender: true },
+  //   '/*': { cors: true } 
+  // } 
 })
